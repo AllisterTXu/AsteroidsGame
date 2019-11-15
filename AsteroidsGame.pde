@@ -1,10 +1,19 @@
-Spaceship kestrel = new Spaceship();
+Spaceship kestrel;
+Star[] stars = new Star[100];
 public void setup() 
 {
-  //your code here
+  size(500,500);
+  for(int i = 0; i < stars.length; i++){
+    stars[i] = new Star();
+  }
+  kestrel = new Spaceship();
 }
 public void draw() 
 {
+  background(20);
+  for(int i = 0; i < stars.length; i++){
+    stars[i].show();
+  }
   kestrel.show();
   kestrel.move();
 }
