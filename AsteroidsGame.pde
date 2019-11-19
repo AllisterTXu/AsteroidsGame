@@ -1,4 +1,5 @@
 Spaceship kestrel;
+Asteroids asteroids;
 Star[] stars = new Star[100];
 public void setup() 
 {
@@ -7,6 +8,7 @@ public void setup()
     stars[i] = new Star();
   }
   kestrel = new Spaceship();
+  //asteroids = new ArrayList<Asteroids>();
 }
 public void draw() 
 {
