@@ -1,15 +1,35 @@
 public class Star 
 {
-  private int starX, starY;
-  private float  starSize, starLight;
+  private float starX, starY, starSize, starLight;
   Star(){
-    starX = (int)(Math.random()*500);
-    starY = (int)(Math.random()*500);
+    starX = (float)(Math.random()*500);
+    starY = (float)(Math.random()*500);
     starSize = (float)(Math.random()*5);
     starLight = (float)(Math.random()*50+100);
   }
   public void show(){
     fill(200, starLight);
     ellipse(starX,starY,starSize,starSize);
+  }
+  public void move(){
+    starX += 0.1;
+    starY += 0.1;
+    if(starX >width)
+    {     
+      starX = 0;    
+    }    
+    else if (starX<0)
+    {     
+      starX = width;    
+    }    
+    if(starY >height)
+    {    
+      starY = 0;    
+    } 
+    
+    else if (starY < 0)
+    {     
+      starY = height;    
+    }   
   }
 }
