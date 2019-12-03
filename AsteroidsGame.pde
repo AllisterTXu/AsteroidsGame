@@ -4,6 +4,9 @@ int stars = 100;
 Star[] topStars = new Starfront[stars];
 Star[] middleStars = new Star[stars];
 Star[] bottomStars = new Starback[stars];
+
+public HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
+
 public void setup() 
 {
   size(500,500);
@@ -14,6 +17,15 @@ public void setup()
   }
   kestrel = new Spaceship();
   //asteroids = new ArrayList<Asteroids>();
+  
+  keys.put("w", false);
+  keys.put("a", false);
+  keys.put("s", false);
+  keys.put("d", false);
+  keys.put("f", false);
+  keys.put(" ", false);
+  keys.put("q", false);
+  
 }
 public void draw() 
 {
@@ -33,6 +45,10 @@ public void draw()
   kestrel.move();
 }
 
-public void keyPressed(){
-  
+public void hyperspace(){
+  kestrel.setDirectionX(0);
+  kestrel.setDirectionY(0);
+  kestrel.setPointDirection((int)(Math.random()*361));
+  kestrel.setX((int)(Math.random()*450));
+  kestrel.setY((int)(Math.random()*450));
 }
