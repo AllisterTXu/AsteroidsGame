@@ -52,3 +52,8 @@ public void hyperspace(){
   kestrel.setX((int)(Math.random()*450));
   kestrel.setY((int)(Math.random()*450));
 }
+
+public void keyPressed(){
+  if (key == 'h')
+    hyperspace();
+}
