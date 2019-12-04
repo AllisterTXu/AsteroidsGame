@@ -29,10 +29,7 @@ public class Spaceship extends Floater
     turn();
     accelerate();
   }
-  
- public void hyperspace(){
-   
- }
+
   
   public void setX(int x) {myCenterX = x;}    
   public int getX() {return (int)myCenterX;}   

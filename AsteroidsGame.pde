@@ -16,15 +16,8 @@ public void setup()
     bottomStars[i] = new Starback();
   }
   kestrel = new Spaceship();
-  //asteroids = new ArrayList<Asteroids>();
+  asteroids = new ArrayList<Asteroids>();
   
-  keys.put("w", false);
-  keys.put("a", false);
-  keys.put("s", false);
-  keys.put("d", false);
-  keys.put("f", false);
-  keys.put(" ", false);
-  keys.put("q", false);
   
 }
 public void draw() 
@@ -43,6 +36,10 @@ public void draw()
   // Draw the ship and move it
   kestrel.show();
   kestrel.move();
+  
+  //Draw the asteroids and move them
+  asteroids.show();
+  asteroids.move();
 }
 
 public void hyperspace(){
@@ -54,6 +51,6 @@ public void hyperspace(){
 }
 
 public void keyPressed(){
-  if (key == 'h')
+  if(key == 'h')
     hyperspace();
 }
