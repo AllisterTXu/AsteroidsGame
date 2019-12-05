@@ -1,6 +1,7 @@
-Spaceship kestrel;
-ArrayList<Asteroids> asteroids;
+Spaceship kestrel = new Spaceship();
+ArrayList<Asteroids> asteroids = new ArrayList<Asteroids>();
 int stars = 100;
+int asteroidCount = 25;
 Star[] topStars = new Starfront[stars];
 Star[] middleStars = new Star[stars];
 Star[] bottomStars = new Starback[stars];
@@ -15,9 +16,9 @@ public void setup()
     middleStars[i] = new Star();
     bottomStars[i] = new Starback();
   }
-  kestrel = new Spaceship();
-  asteroids = new ArrayList<Asteroids>();
-  
+  for(int i = 0; i < asteroidCount; i++){
+    asteroids.add(i, new Asteroids());
+  }
   
 }
 public void draw() 
@@ -38,8 +39,10 @@ public void draw()
   kestrel.move();
   
   //Draw the asteroids and move them
-  asteroids.show();
-  asteroids.move();
+  for(int i = 0; i < asteroids.size(); i ++){
+    asteroids.get(i).show();
+    asteroids.get(i).move();
+  }
 }
 
 public void hyperspace(){
@@ -53,4 +56,10 @@ public void hyperspace(){
 public void keyPressed(){
   if(key == 'h')
     hyperspace();
+  if(key == 'w')
+    kestrel.accelerate(0.1);
+  if(key == 'a')
+    kestrel.turn(-10);
+  if(key == 'd')
+    kestrel.turn(10);
 }

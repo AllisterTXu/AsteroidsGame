@@ -14,8 +14,8 @@ public class Star
     ellipse(starX,starY,starSize,starSize);
   }
   public void move(){
-    starX += starXVel;
-    starY += starYVel;
+    starX += starXVel*0.1;
+    starY += starYVel*0.1;
     if(starX >width)
     {     
       starX = 0;    

@@ -16,4 +16,7 @@ class Asteroids extends Floater
     rotate(rotSpeed);
     super.move();
   }
+  public void show(){
+    
+  }
 }
