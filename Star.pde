@@ -1,7 +1,7 @@
 public class Star 
 {
   protected float starX, starY, starSize, starLight, starXVel, starYVel;
-  Star(){
+  Star() {
     starX = (float)(Math.random()*500);
     starY = (float)(Math.random()*500);
     starSize = (float)(Math.random()*5);
@@ -9,81 +9,70 @@ public class Star
     starXVel = (float)(Math.random()*4)-2;
     starYVel = (float)(Math.random()*4)-2;
   }
-  public void show(){
+  public void show() {
     fill(200, starLight);
-    ellipse(starX,starY,starSize,starSize);
+    ellipse(starX, starY, starSize, starSize);
   }
-  public void move(){
+  public void move() {
     starX += starXVel*0.1;
     starY += starYVel*0.1;
-    if(starX >width)
+    if (starX >width)
     {     
-      starX = 0;    
-    }    
-    else if (starX<0)
+      starX = 0;
+    } else if (starX<0)
     {     
-      starX = width;    
+      starX = width;
     }    
-    if(starY >height)
+    if (starY >height)
     {    
-      starY = 0;    
-    } 
-    
-    else if (starY < 0)
+      starY = 0;
+    } else if (starY < 0)
     {     
-      starY = height;    
-    }   
+      starY = height;
+    }
   }
 }
 
 public class Starback extends Star
 {
-  public void move(){
+  public void move() {
     starX += 0.5;
     starY -= 0.01;
-    if(starX >width)
+    if (starX >width)
     {     
-      starX = 0;    
-    }    
-    else if (starX<0)
+      starX = 0;
+    } else if (starX<0)
     {     
-      starX = width;    
+      starX = width;
     }    
-    if(starY >height)
+    if (starY >height)
     {    
-      starY = 0;    
-    } 
-    
-    else if (starY < 0)
+      starY = 0;
+    } else if (starY < 0)
     {     
-      starY = height;    
-    }   
+      starY = height;
+    }
   }
-    
 }
 
 public class Starfront extends Star
 {
-  public void move(){
+  public void move() {
     starX += 0.3;
     starY += 0.01;
-    if(starX >width)
+    if (starX >width)
     {     
-      starX = 0;    
-    }    
-    else if (starX<0)
+      starX = 0;
+    } else if (starX<0)
     {     
-      starX = width;    
+      starX = width;
     }    
-    if(starY >height)
+    if (starY >height)
     {    
-      starY = 0;    
-    } 
-    
-    else if (starY < 0)
+      starY = 0;
+    } else if (starY < 0)
     {     
-      starY = height;    
-    }   
+      starY = height;
+    }
   }
-    
 }
