@@ -1,13 +1,12 @@
 Spaceship kestrel = new Spaceship();
 ArrayList<Asteroids> asteroids = new ArrayList<Asteroids>();
-ArrayList<Bullet> bullets = new ArrayList<Bullet>();
+ArrayList<Bullets> bullets = new ArrayList<Bullets>();
 int stars = 100;
 int asteroidCount = 25;
 Star[] topStars = new Starfront[stars];
 Star[] middleStars = new Star[stars];
 Star[] bottomStars = new Starback[stars];
 
-public HashMap<String, Boolean> keys = new HashMap<String, Boolean>();
 
 public void setup() 
 {
@@ -18,7 +17,7 @@ public void setup()
     bottomStars[i] = new Starback();
   }
   for (int i = 0; i < asteroidCount; i++) {
-    asteroids.add(i, new Asteroids());
+    asteroids.add(new Asteroids());
   }
 }
 public void draw() 
@@ -37,33 +36,37 @@ public void draw()
   // Draw the ship and move it
   kestrel.show();
   kestrel.move();
-  if(wPressed){
+  if (wPressed) {
     kestrel.accelerate(0.1);
     //flames.show();
     //flames.accelerate(0.1);
   }
-  if(aPressed){
+  if (aPressed) {
     kestrel.turn(-5);
   }
-  if(dPressed){
+  if (dPressed) {
     kestrel.turn(5);
   }
-  //if(sPressed){
-  //  if((Math.abs(kestrel.getDirectionX > 0)) || (Math.abs(kestrel.getDirectionY > 0))){
-  //    kestrel.accelerate(-0.05);
-  //  }
-  //}
-  if(hPressed){
+  if (sPressed) {
+    if((Math.abs(kestrel.getDirectionX > 0)) || (Math.abs(kestrel.getDirectionY > 0))) {
+    kestrel.accelerate(-0.05);
+    }
+  }
+  if (hPressed) {
     hyperspace();
   }
 
   //Draw the asteroids and move them
-  for (int i = 0; i < asteroids.size(); i ++) {
+  for (int i = 0; i < asteroids.size(); i++) {
     asteroids.get(i).show();
     asteroids.get(i).move();
   }
+  for (int i = 0; i < asteroids.size()-1; i++) {
+    if (dist(kestrel.getX(), kestrel.getY(), asteroids.get(i).getX(), asteroids.get(i).getY()) < 20) {
+      asteroids.remove(i);
+    }
+  }
 }
-
 public void hyperspace() {
   kestrel.setDirectionX(0);
   kestrel.setDirectionY(0);
@@ -86,7 +89,7 @@ public void keyPressed() {
   if (key == 'd')
     dPressed = true;
   if (key == ' ')
-    bullets.add(new Bullet());
+    bullets.add(new Bullets());
 }
 
 public void keyReleased() {
