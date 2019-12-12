@@ -5,9 +5,9 @@ public class Star
     starX = (float)(Math.random()*500);
     starY = (float)(Math.random()*500);
     starSize = (float)(Math.random()*5);
-    starLight = (float)(Math.random()*50+100);
-    starXVel = (float)(Math.random()*4)-2;
-    starYVel = (float)(Math.random()*4)-2;
+    starLight = (float)(starSize*(Math.random()*50));
+    starXVel = (float)((2)/starSize);
+    starYVel = (float)((2)/starSize);
   }
   public void show() {
     fill(200, starLight);

@@ -14,23 +14,6 @@ public class Spaceship extends Floater
     degrees = 0;
   }
 
-  /*
-  public void turn() {
-    myPointDirection+=degrees;
-    if (myPointDirection == 360 || myPointDirection == -360) {
-      myPointDirection =0;
-    }
-  }
-  public void accelerate() {
-    myDirectionX += Math.cos(myPointDirection*Math.PI/180);
-    myDirectionY += Math.sin(myPointDirection*Math.PI/180);
-  }
-  public void move() {
-    turn();
-    accelerate();
-  }
-  */
-
   public void setX(int x) {
     myCenterX = x;
   }    

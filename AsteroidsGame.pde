@@ -1,4 +1,5 @@
 Spaceship kestrel = new Spaceship();
+Flames flare = new Flames();
 ArrayList<Asteroids> asteroids = new ArrayList<Asteroids>();
 ArrayList<Bullets> bullets = new ArrayList<Bullets>();
 int stars = 100;
@@ -36,20 +37,24 @@ public void draw()
   // Draw the ship and move it
   kestrel.show();
   kestrel.move();
+  flare.move();
   if (wPressed) {
     kestrel.accelerate(0.1);
-    //flames.show();
-    //flames.accelerate(0.1);
+    flare.show();
+    flare.accelerate(0.1);
   }
   if (aPressed) {
     kestrel.turn(-5);
+    flare.turn(-5);
   }
   if (dPressed) {
     kestrel.turn(5);
+    flare.turn(5);
   }
   if (sPressed) {
-    if((Math.abs(kestrel.getDirectionX > 0)) || (Math.abs(kestrel.getDirectionY > 0))) {
-    kestrel.accelerate(-0.05);
+    if((Math.abs((int)(kestrel.getDirectionX())) > 0) || (Math.abs((int)kestrel.getDirectionY()) > 0)) {
+      kestrel.accelerate(-0.05);
+      flare.accelerate(-0.05);
     }
   }
   if (hPressed) {

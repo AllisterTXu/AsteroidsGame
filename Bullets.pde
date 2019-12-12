@@ -2,7 +2,6 @@ class Bullets extends Floater
 {
   Bullets()
   {
-    
   }
   public void setX(int x) {
     myCenterX = x;
