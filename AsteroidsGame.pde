@@ -4,6 +4,7 @@ ArrayList<Asteroids> asteroids = new ArrayList<Asteroids>();
 ArrayList<Bullets> bullets = new ArrayList<Bullets>();
 int stars = 100;
 int asteroidCount = 25;
+int bulletCount = 10;
 Star[] topStars = new Starfront[stars];
 Star[] middleStars = new Star[stars];
 Star[] bottomStars = new Starback[stars];
@@ -71,6 +72,12 @@ public void draw()
       asteroids.remove(i);
     }
   }
+  
+  // Draw and move bullets
+  for(int i = 0; i < bullets.size()-1; i++){
+    bullets.get(i).show();
+    bullets.get(i).move();
+  }
 }
 public void hyperspace() {
   kestrel.setDirectionX(0);
@@ -78,6 +85,11 @@ public void hyperspace() {
   kestrel.setPointDirection((int)(Math.random()*361));
   kestrel.setX((int)(Math.random()*450));
   kestrel.setY((int)(Math.random()*450));
+  flare.setDirectionX(0);
+  flare.setDirectionY(0);
+  flare.setPointDirection((int)kestrel.getPointDirection());
+  flare.setX((int)kestrel.getX());
+  flare.setY((int)kestrel.getY());
 }
 
 boolean wPressed, aPressed, dPressed, sPressed, hPressed, spacePressed;

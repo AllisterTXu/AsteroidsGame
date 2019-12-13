@@ -1,7 +1,13 @@
 class Bullets extends Floater
 {
-  Bullets()
+  public Bullets()
   {
+    myCenterX = kestrel.getX();
+    myCenterY = kestrel.getY();
+    myPointDirection = kestrel.getPointDirection();
+    myDirectionX = kestrel.getDirectionX()*1.1;
+    myDirectionY = kestrel.getDirectionY()*1.1;
+    
   }
   public void setX(int x) {
     myCenterX = x;
